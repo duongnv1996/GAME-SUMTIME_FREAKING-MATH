@@ -11,6 +11,7 @@
 #pragma comment(lib, "graphics.lib")
 void menuGame(bool);
 void showBestScore();
+void showAbout();
 #define HEIGHT  600
 #define WIDTH  400
 #define FONTTEXT 4
@@ -35,9 +36,9 @@ int numberOfFalse = 0;
 int numberOfTrue = 0;
 bool isTrue =false;
 fstream dataFile;
-	int _bestScore = 0;
-	int score =0;
-		bool isLocked =false;
+int _bestScore = 0;
+int score =0;
+bool isLocked =false;
 	// 
 int fileScore(int s,int &sc)
 {
@@ -79,6 +80,15 @@ int showText(char *c,int posX,int posY,int color,int font,int size){
 	setbkcolor(colorBG);
 	setcolor(color);
 	settextjustify(1,1);			// can le
+	settextstyle(font,0,size);
+	outtextxy(posX,posY,c);
+	setcolor(WHITE);
+	return textwidth(c);
+}
+int showTextLeft(char *c,int posX,int posY,int color,int font,int size){
+	setbkcolor(colorBG);
+	setcolor(color);
+	settextjustify(0,0);			// can le
 	settextstyle(font,0,size);
 	outtextxy(posX,posY,c);
 	setcolor(WHITE);
@@ -145,6 +155,32 @@ void showTrueFalse(){
 	settextjustify(1,1);
 	settextstyle(FONTTEXT,0,SIZETEXT);
 	outtextxy(105,490,"T");
+	setcolor(RED);
+	outtextxy(295,490,"F");
+}
+void showTrueClicked(){
+
+	setfillstyle(1,LIGHTGRAY) ;
+	bar(30,400,180,550);		//true
+
+	setcolor(BLUE);
+	setbkcolor(LIGHTGRAY);
+	settextjustify(1,1);
+	settextstyle(FONTTEXT,0,SIZETEXT);
+	outtextxy(105,490,"T");
+	setcolor(RED);
+	
+}
+void showFalseClicked(){
+
+	setfillstyle(1,LIGHTGRAY) ;
+
+		bar(220,400,370,550);		
+	setcolor(BLUE);
+	setbkcolor(LIGHTGRAY);
+	settextjustify(1,1);
+	settextstyle(FONTTEXT,0,SIZETEXT);
+	
 	setcolor(RED);
 	outtextxy(295,490,"F");
 }
@@ -239,6 +275,10 @@ void showGameControl(){
 
 			if(mouse.x >=30 && mouse.x< 180 && mouse.y>=400 && mouse.y<550){
 				cout<<"Chon True"<<endl;
+				showTrueClicked ();
+				delay (150);
+				showTrueFalse ();
+				//showTrueFalse ();
 				if(isTrue){
 					updateData(score,isCorrectAnswer,increaseBar);
 					continue;
@@ -248,6 +288,10 @@ void showGameControl(){
 				}			
 			}else if(mouse.x >=220 && mouse.x< 370 && mouse.y>=400 && mouse.y<550){
 				cout<<"Chon False"<<endl;
+				showFalseClicked ();
+				delay (150);
+				setbkcolor(WHITE);
+				showTrueFalse ();
 				if(!isTrue){
 					updateData(score,isCorrectAnswer,increaseBar);
 					continue;
@@ -266,8 +310,9 @@ void showGameControl(){
 		if(score%10==0)	decreaseTime--;	
 	}
 }
-void menuGame(bool isFisrtTime){
 
+void menuGame(bool isFisrtTime){
+	PlaySound("background.wav", NULL, SND_ASYNC|SND_FILENAME|SND_LOOP);
 	Point mouseClickMenu;	
 	colorBG=3;
 	setbkcolor(colorBG);
@@ -276,34 +321,34 @@ void menuGame(bool isFisrtTime){
 		int increase =0;
 		int t;
 		while(true){
-			t = showText(" Sum",70,increase,WHITE,8,30);		
+			t = showText(" Sum",90,increase,WHITE,BOLD_FONT,7);		
 			delay(3);
 			increase++;
 			if((130) == increase){
 				break;
 			}else {
-				showText(" Sum",70,increase,3,8,30);
+				showText(" Sum",90,increase,WHITE,BOLD_FONT,7);
 			}
 		}
 		delay(10);
 		increase=400;
 		while(true){
-			showText("Time",increase,130,WHITE,BOLD_FONT,8);
+			showText("Time",increase,130,WHITE,BOLD_FONT,7);
 
 			delay(3);
 
 			increase--;
-			if((70+t) == increase){
+			if((90+t) == increase){
 				break;
 			}else {
-				showText("Time",increase,130,3,BOLD_FONT,8);
+				showText("Time",increase,130,3,BOLD_FONT,7);
 			}
 		}
 		delay(10);
 	}else{
 		int t;
-		t = showText(" Sum",70,130,WHITE,8,30);		
-		showText("Time",70+t,130,WHITE,BOLD_FONT,8);
+		t = showText(" Sum",90,130,WHITE,BOLD_FONT,7);		
+		showText("Time",90+t,130,WHITE,BOLD_FONT,7);
 	}
 	colorBG=15;
 	//show button play
@@ -322,28 +367,65 @@ void menuGame(bool isFisrtTime){
 
 	// show text duongkk
 	colorBG=3;
-	showText("Made by DuongKaKa ",200,580,WHITE,8,40);
+	showText("©2016 DuongKaKa",200,580,WHITE,8,40);
 	while(true){
+		//PlaySound(TEXT("background.wav"), NULL, SND_FILENAME);
+		
 		mouseClickMenu.x=mousex();
 		mouseClickMenu.y=mousey();
 		cout<<"Click : "<<mouseClickMenu.x <<"\t"<<mouseClickMenu.y<<endl;
+		
 		if(ismouseclick(513)){
 			Point mouseClickMenu;
 			mouseClickMenu.x=mousex();
 			mouseClickMenu.y=mousey();
 			cout<<"Click : "<<mouseClickMenu.x <<"\t"<<mouseClickMenu.y<<endl;
 			clearmouseclick(513);
-			if(mouseClickMenu.x>=145 && mouseClickMenu.x<245 && mouseClickMenu.y>=320 && mouseClickMenu.y<370 && !isLocked){	
+			if(mouseClickMenu.x>=145 && mouseClickMenu.x<245 && mouseClickMenu.y>=320 && mouseClickMenu.y<370 && isLocked == false){
+				PlaySound(TEXT("click.wav"), NULL, SND_ASYNC|SND_FILENAME);
+				colorBG=LIGHTGRAY;
+				drawBar(1,colorBG,145,320,245,370);			// 100x50 
+				showText("Play",195,350,4,BOLD_FONT,2);
+				delay(150);
+				colorBG=15;
+				drawBar(1,colorBG,145,320,245,370);			// 100x50 
+				showText("Play",195,350,4,BOLD_FONT,2);
 				showGameControl();
 				break;
 			}
 			if(mouseClickMenu.x>=45&& mouseClickMenu.x<145 && mouseClickMenu.y>=390 &&mouseClickMenu.y<440){	
 				isLocked=true;
+				PlaySound(TEXT("click.wav"), NULL,  SND_ASYNC|SND_FILENAME);
+				colorBG=LIGHTGRAY;
+				drawBar(1,colorBG,45,390,145,440);			// 100x50 
+				showText("Rank",95,420,2,BOLD_FONT,2);
+				delay(150);
+				colorBG=15;
+				drawBar(1,colorBG,45,390,145,440);			// 100x50 
+				showText("Rank",95,420,2,BOLD_FONT,2);
 				showBestScore();
 				
 				//break;
 			}
+			if(mouseClickMenu.x>=245&& mouseClickMenu.x<345 && mouseClickMenu.y>=390 &&mouseClickMenu.y<440){	
+				PlaySound(TEXT("click.wav"), NULL,  SND_ASYNC|SND_FILENAME);
+				colorBG=LIGHTGRAY;
+				drawBar(1,LIGHTGRAY,245,390,345,440);			// 100x50 
+				showText("About",295,420,8,BOLD_FONT,2);
+				delay(150);
+				colorBG=15;
+				drawBar(1,colorBG,245,390,345,440);			// 100x50 
+				showText("About",295,420,8,BOLD_FONT,2);
+	
+				isLocked=true;
+				
+				showAbout();
+
+				//break;
+
+			}
 		}
+		
 	}
 	
 }
@@ -374,6 +456,28 @@ void sao(int x0,int y0,int m)
 	 floodfill( x0 + R/3    , y0 + R/3     , m);	    // to mau canh phai duoi
 
 }
+void showAbout(){
+	colorBG=DARKGRAY;
+	drawBar(1,colorBG,80,200,320,400);
+	char best[10],sc[10];
+	itoa(_bestScore,best,10);
+	itoa(score,sc,10);
+	showTextLeft("MaSV: 1481310014" ,90,280,WHITE,BOLD_FONT,18);
+	//showText(sc ,240,300,WHITE,BOLD_FONT,20);
+	showTextLeft("SV: Nguyen Van Duong" ,90,310,WHITE,BOLD_FONT,18);
+/*	showText(best ,240,350,YELLOW,BOLD_FONT,20);*/
+	showTextLeft("Lop: D9CNPM" ,90,340,WHITE,BOLD_FONT,18);
+		showTextLeft("GV: Ngo Ngoc Thanh" ,90,370,WHITE,BOLD_FONT,18);
+	sao(200,200,YELLOW);
+	while (true)
+	{
+		if(ismouseclick(513)){
+			isLocked=false;
+			menuGame(false);
+			break;
+		}
+	}
+}
 void showBestScore(){
 	colorBG=DARKGRAY;
 	drawBar(1,colorBG,80,200,320,400);
@@ -394,6 +498,7 @@ void showBestScore(){
 		}
 	}
 }
+
 int main()
 {
 

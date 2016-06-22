@@ -1,45 +1,49 @@
-﻿Build started 4/19/2016 12:39:39 PM.
-     1>Project "D:\HelloStdio_VS2012\SumTime\HelloStdio_VS2012.vcxproj" on node 2 (Build target(s)).
+﻿Build started 6/23/2016 12:14:01 AM.
+     1>Project "C:\Users\MyPC\Desktop\GAME-SUMTIME_FREAKING-MATH\SumTime\HelloStdio_VS2012.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>d:\hellostdio_vs2012\sumtime\graphics.h(281): warning C4273: 'getch' : inconsistent dll linkage
-                 c:\program files (x86)\vc\include\conio.h(131) : see previous definition of 'getch'
-     1>d:\hellostdio_vs2012\sumtime\graphics.h(282): warning C4273: 'kbhit' : inconsistent dll linkage
-                 c:\program files (x86)\vc\include\conio.h(133) : see previous definition of 'kbhit'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(107): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
-                 c:\program files (x86)\vc\include\stdlib.h(909) : see declaration of 'itoa'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(108): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
-                 c:\program files (x86)\vc\include\stdlib.h(909) : see declaration of 'itoa'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(110): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\vc\include\string.h(115) : see declaration of 'strcat'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(111): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\vc\include\string.h(115) : see declaration of 'strcat'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(132): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\vc\include\string.h(110) : see declaration of 'strcpy'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(133): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
-                 c:\program files (x86)\vc\include\stdlib.h(909) : see declaration of 'itoa'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(134): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\vc\include\string.h(115) : see declaration of 'strcat'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(168): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
-                 c:\program files (x86)\vc\include\stdlib.h(909) : see declaration of 'itoa'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(197): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(198): warning C4101: 'key' : unreferenced local variable
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(201): warning C4101: 'mouneX' : unreferenced local variable
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(202): warning C4101: '_isAnswer' : unreferenced local variable
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(201): warning C4101: 'mouneY' : unreferenced local variable
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(355): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(381): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
-                 c:\program files (x86)\vc\include\stdlib.h(909) : see declaration of 'itoa'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(382): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
-                 c:\program files (x86)\vc\include\stdlib.h(909) : see declaration of 'itoa'
-     1>d:\hellostdio_vs2012\sumtime\main.cpp(407): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
-                 c:\program files (x86)\vc\include\conio.h(131) : see declaration of 'getch'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\graphics.h(281): warning C4273: 'getch' : inconsistent dll linkage
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\conio.h(131) : see previous definition of 'getch'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\graphics.h(282): warning C4273: 'kbhit' : inconsistent dll linkage
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\conio.h(133) : see previous definition of 'kbhit'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(117): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(909) : see declaration of 'itoa'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(118): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(909) : see declaration of 'itoa'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(120): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(115) : see declaration of 'strcat'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(121): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(115) : see declaration of 'strcat'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(142): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(143): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(909) : see declaration of 'itoa'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(144): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(115) : see declaration of 'strcat'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(204): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(909) : see declaration of 'itoa'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(233): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(234): warning C4101: 'key' : unreferenced local variable
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(237): warning C4101: 'mouneX' : unreferenced local variable
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(238): warning C4101: '_isAnswer' : unreferenced local variable
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(237): warning C4101: 'mouneY' : unreferenced local variable
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(437): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(463): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(909) : see declaration of 'itoa'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(464): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(909) : see declaration of 'itoa'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(485): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(909) : see declaration of 'itoa'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(486): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(909) : see declaration of 'itoa'
+     1>c:\users\mypc\desktop\game-sumtime_freaking-math\sumtime\main.cpp(512): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\conio.h(131) : see declaration of 'getch'
        Link:
-         C:\Program Files (x86)\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\HelloStdio_VS2012\SumTime\Debug\GameSumTime.exe" /INCREMENTAL /NOLOGO winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\HelloStdio_VS2012\SumTime\Debug\GameSumTime.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\HelloStdio_VS2012\SumTime\Debug\GameSumTime.lib" /MACHINE:X86 Debug\main.obj
-         HelloStdio_VS2012.vcxproj -> D:\HelloStdio_VS2012\SumTime\Debug\GameSumTime.exe
-     1>Done Building Project "D:\HelloStdio_VS2012\SumTime\HelloStdio_VS2012.vcxproj" (Build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MyPC\Desktop\GAME-SUMTIME_FREAKING-MATH\SumTime\Debug\GameSumTime.exe" /INCREMENTAL /NOLOGO winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\MyPC\Desktop\GAME-SUMTIME_FREAKING-MATH\SumTime\Debug\GameSumTime.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MyPC\Desktop\GAME-SUMTIME_FREAKING-MATH\SumTime\Debug\GameSumTime.lib" /MACHINE:X86 Debug\main.obj
+         HelloStdio_VS2012.vcxproj -> C:\Users\MyPC\Desktop\GAME-SUMTIME_FREAKING-MATH\SumTime\Debug\GameSumTime.exe
+     1>Done Building Project "C:\Users\MyPC\Desktop\GAME-SUMTIME_FREAKING-MATH\SumTime\HelloStdio_VS2012.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:05.42
+Time Elapsed 00:00:01.88
