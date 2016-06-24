@@ -59,8 +59,8 @@ void bestScore(int &sc)
 	{fileScore.read(reinterpret_cast<char *>(&sc),sizeof(sc));
 	}
 	fileScore.close();
-	cout<<"Best: ";
-	cout<<sc;
+	//cout<<"Best: ";
+	//cout<<sc;
 }
 int getRandom(int a, int b,int c){
 	int randNumber;
@@ -142,7 +142,7 @@ char* getResult(int result){
 	strcpy(op," = ");
 	itoa(result,c_result,10);
 	strcat(op,c_result);
-	cout<<"Is true = "<<isTrue << "  numberOfFalse  = "<<numberOfFalse<< "  numberOfTrue  = "<<numberOfTrue<<"DAP AN IN = "<<op<<endl ; 
+	//cout<<"Is true = "<<isTrue << "  numberOfFalse  = "<<numberOfFalse<< "  numberOfTrue  = "<<numberOfTrue<<"DAP AN IN = "<<op<<endl ; 
 	return op;
 }
 void showTrueFalse(){
@@ -218,11 +218,12 @@ bool onClickMouse(Point mouse){
 	}
 	return false;
 }
-void falseAnswer(int score,int bestScore){
+void falseAnswer(int score,int best){
 	char * c_score = new char[1000];
 	PlaySound(TEXT("fail.wav"), NULL, SND_FILENAME);
-	if(score>bestScore){
-		fileScore(score,bestScore);
+	if(score>best){
+		fileScore(score,best);
+		bestScore(_bestScore);
 	}
 	delay(1000);
 	menuGame(false);
@@ -237,11 +238,12 @@ void showGameControl(){
 	int mouneX,mouneY;
 	bool _isAnswer;
 	int decreaseTime = 30;
+	score = 0;
 	while(true){
 		if(isCorrectAnswer) showView(score);		// show next question
 		isCorrectAnswer=false;
 		drawBar(1,colorBG,0,0,increaseBar,10);	//increase time bar
-		delay(30);	//30
+		delay(decreaseTime);	//30
 
 		// bat key tu ban phim
 		/*if(kbhit()){		
@@ -274,26 +276,32 @@ void showGameControl(){
 			clearmouseclick(513);
 
 			if(mouse.x >=30 && mouse.x< 180 && mouse.y>=400 && mouse.y<550){
-				cout<<"Chon True"<<endl;
+				//cout<<"Chon True"<<endl;
 				showTrueClicked ();
 				delay (150);
 				showTrueFalse ();
 				//showTrueFalse ();
 				if(isTrue){
 					updateData(score,isCorrectAnswer,increaseBar);
+					if(score%10==0 && score !=0)
+						decreaseTime--;	
+					//cout<<"Time Delay"<<decreaseTime<<endl ;
 					continue;
 				}	else{
 					falseAnswer(score,_bestScore);
 					break;
 				}			
 			}else if(mouse.x >=220 && mouse.x< 370 && mouse.y>=400 && mouse.y<550){
-				cout<<"Chon False"<<endl;
+				//cout<<"Chon False"<<endl;
 				showFalseClicked ();
 				delay (150);
 				setbkcolor(WHITE);
 				showTrueFalse ();
 				if(!isTrue){
 					updateData(score,isCorrectAnswer,increaseBar);
+					if(score%10==0 && score !=0)
+						decreaseTime--;	
+					//cout<<"Time Delay"<<decreaseTime<<endl ;
 					continue;
 				}	else{
 					falseAnswer(score,_bestScore);
@@ -307,7 +315,9 @@ void showGameControl(){
 			falseAnswer(score,_bestScore);
 			break;
 		}
-		if(score%10==0)	decreaseTime--;	
+		/*if(score%10==0 && score !=0)
+			decreaseTime--;	
+		//cout<<"Time Delay"<<decreaseTime<<endl ;*/
 	}
 }
 
@@ -373,13 +383,13 @@ void menuGame(bool isFisrtTime){
 		
 		mouseClickMenu.x=mousex();
 		mouseClickMenu.y=mousey();
-		cout<<"Click : "<<mouseClickMenu.x <<"\t"<<mouseClickMenu.y<<endl;
+		//cout<<"Click : "<<mouseClickMenu.x <<"\t"<<mouseClickMenu.y<<endl;
 		
 		if(ismouseclick(513)){
 			Point mouseClickMenu;
 			mouseClickMenu.x=mousex();
 			mouseClickMenu.y=mousey();
-			cout<<"Click : "<<mouseClickMenu.x <<"\t"<<mouseClickMenu.y<<endl;
+			//cout<<"Click : "<<mouseClickMenu.x <<"\t"<<mouseClickMenu.y<<endl;
 			clearmouseclick(513);
 			if(mouseClickMenu.x>=145 && mouseClickMenu.x<245 && mouseClickMenu.y>=320 && mouseClickMenu.y<370 && isLocked == false){
 				PlaySound(TEXT("click.wav"), NULL, SND_ASYNC|SND_FILENAME);
